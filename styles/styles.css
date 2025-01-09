@@ -1,5 +1,6 @@
 
 * {
+	
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,32 +10,45 @@ html, body {
     height: 100%;
     margin: 0;
     overflow-x: hidden; /* Prevent horizontal scroll */
+	background-color: rgb(214, 213, 192);
+}
+
+body{
+	background-color: rgb(214, 213, 192);
+opacity: 0.8;
+background-image:  linear-gradient(135deg, #4c7565 5%, transparent 5%), linear-gradient(225deg, #4c7565 5%, transparent 25%), linear-gradient(45deg, #4c7565 5%, transparent 5%), linear-gradient(45deg, #4c7565 25%, rgb(214, 213, 192) 5%);
+background-position:  10px 0, 10px 0, 0 0, 0 0;
+background-size: 25px 25px;
+background-repeat: repeat;
 }
 
 h1{
 	margin: 60px;
 	font-size: 60px;
-	color: rgb(48, 40, 3);
-    font-family: 'Poppins';
+	color: rgb(76, 92, 79);
+    font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
     text-align: left;
 }
 
 h2{
 	margin: 60px;
 	font-size: 50px;
-	color: black;
-    font-family: 'Poppins';
+	color: rgb(76, 92, 79);
+    font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
     text-align: left;
-    text-decoration: underline;
 }
 p{
 	margin: 60px;
 	font-size: 30px;
-	color: black;
-    font-family: 'Work Sans';
+	color: rgb(76, 92, 79);
+    font-family: Arial, Helvetica, sans-serif;
+	font-weight: lighter;
+	text-align: left;
 }
 a{
-	color: white;
+	color: blanchedalmond;
     font-family: 'Poppins';
     text-decoration: none;
 }
@@ -54,7 +68,7 @@ a{
 	align-items: end;
 	gap: 15px;
 	flex: 10%;
-	background-color: rgb(48, 40, 3);
+	background-color: rgb(98, 128, 101);
 }
 
 .header{
@@ -64,7 +78,7 @@ a{
 	align-items: top;
 	gap: 15px;
 	flex: 10%;
-	background-color: rgb(48, 40, 3);
+	background-color:  rgb(98, 128, 101);
 }
 
 
@@ -73,7 +87,7 @@ a{
 	max-width: auto;
 	display: flex;
 	justify-content: center;
-	box-shadow: 10px 10px 2px rgb(181, 199, 173);
+	box-shadow: 10px 10px 2px rgb(98, 128, 101);
 }
 
 nav{
@@ -84,6 +98,7 @@ nav{
 }
 
 .item1:hover{
+	transform: perspective(500px) rotateY(120deg);
 	opacity:0.5;
 }
 .item2:hover{
