@@ -91,7 +91,7 @@ nav{
 }
 
 .item1:hover{
-	transform: perspective(1000px) rotateY(-50deg);
+	transform: perspective(1200px) rotateY(-25deg) translate(50px,0px) scale(1.2);
 
 }
 .item2:hover{
