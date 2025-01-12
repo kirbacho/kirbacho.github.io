@@ -8,7 +8,7 @@
 
 
 body{
-	background-image: url('../images/backround.jpeg'); /* Set your background image here */
+	background-image: url('../images/background.jpeg'); /* Set your background image here */
     background-size: cover; /* Ensure the background covers the entire page */
     background-repeat: no-repeat; /* Prevent the background from repeating */
     background-attachment: fixed; /* Make the background fixed when scrolling */
