@@ -133,7 +133,7 @@ nav{
 
 #scroll-text {  
 	
-	 -webkit-text-stroke-width: 3px; background-color: blue; max-width: fit-content;  font-size: 90px; text-align: left;   color: rgb(255, 255, 255);   font-family: "VT323", serif;   font-weight: 400;      text-align: center;   transform: translateX(100%);   animation: my-animation 10s linear infinite;    }    @keyframes my-animation {   from {       transform: translateX(200%);   }   to {     transform: translateX(-100%);   }  }
+	 -webkit-text-stroke-width: 3px; background-color: blue; max-width: fit-content;  font-size: 90px; text-align: left;   color: rgb(255, 255, 255);   font-family: "VT323", serif;   font-weight: 400;      text-align: center;   transform: translateX(100%);   animation: my-animation 10s linear infinite;    }    @keyframes my-animation {   from {       transform: translateX(100%);   }   to {     transform: translateX(-100%);   }  }
 
 .item1:hover {
     animation-name: cardflip;
