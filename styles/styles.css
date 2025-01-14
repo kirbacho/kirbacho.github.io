@@ -9,11 +9,11 @@
 
 body{
 	background-color: rgb(120, 235, 255);
-	background-image: url('../images/background.png'); /* Set your background image here */
+	background-image: url('../images/background.png'); 
 	background-size:contain;
 	background-position-x: right;
 	background-position-y: center;
-    background-repeat: no-repeat; /* Prevent the background from repeating */
+    background-repeat: no-repeat; 
     background-attachment:scroll;
 }
 
@@ -38,10 +38,14 @@ h2{
 p{
 	margin: 60px;
 	font-size: 30px;
-	color: rgb(76, 92, 79);
+	color: rgb(255, 255, 255);
+	background-color: rgb(0, 0, 255);
     font-family: Arial, Helvetica, sans-serif;
 	font-weight: lighter;
 	text-align: left;
+	transform: perspective(2250px) rotateY(25deg);
+		box-shadow: 25px 25px 2px rgb(0, 119, 255);
+		animation: shadowiggle 2s infinite;
 }
 a{
 	color: rgb(255, 255, 255);
@@ -79,6 +83,7 @@ a{
 }
 
 .bar{
+	max-width: auto;
 	flex-wrap: wrap;
 	display: flex;
 	justify-content: left;
@@ -114,6 +119,22 @@ nav{
 	}
 }
 
+@keyframes shadowiggle {
+	0% {
+		box-shadow: 10px 10px 2px rgb(0, 119, 255);
+	}
+	50% {
+		box-shadow: -0.8rem -0.8rem 2px rgb(66, 154, 255);
+	}
+	100% {
+		box-shadow: 10px 10px 2px rgb(0, 119, 255);
+	}
+}
+
+#scroll-text {  
+	
+	 -webkit-text-stroke-width: 3px; background-color: blue; max-width: fit-content;  font-size: 90px; text-align: left;   color: rgb(255, 255, 255);   font-family: "VT323", serif;   font-weight: 400;      text-align: center;   transform: translateX(100%);   animation: my-animation 10s linear infinite;    }    @keyframes my-animation {   from {       transform: translateX(200%);   }   to {     transform: translateX(-100%);   }  }
+
 .item1:hover {
     animation-name: cardflip;
     animation-duration: 1s;
@@ -131,4 +152,3 @@ nav{
 .item4:hover{
 	opacity:0.5;
 }
-
