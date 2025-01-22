@@ -73,6 +73,7 @@ a{
 }
 
 .header{
+	width: 100%;
 	flex-wrap: wrap;
 	display: flex;
 	justify-content: center;
@@ -124,10 +125,10 @@ nav{
 		box-shadow: 10px 10px 2px rgb(0, 119, 255);
 	}
 	50% {
-		box-shadow: -0.8rem -0.8rem 2px rgb(66, 154, 255);
+		box-shadow: -0.8rem -0.8rem 2px rgb(0, 119, 255);
 	}
 	100% {
-		box-shadow: 10px 10px 2px rgb(0, 119, 255);
+		box-shadow: 15px 10px 2px rgb(0, 119, 255);
 	}
 }
 
