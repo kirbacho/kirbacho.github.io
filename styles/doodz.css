@@ -1,0 +1,154 @@
+
+* {
+	
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+	background-color: rgb(187, 255, 194);
+	background-size:contain;
+	background-position-x: right;
+	background-position-y: center;
+    background-repeat: no-repeat; 
+    background-attachment:scroll;
+}
+
+
+h1{
+	margin: 40px;
+	font-size: 100px;
+	color: rgb(255, 255, 255);
+	font-family: "VT323", serif;
+	font-weight: 1;
+    text-align: left;
+}
+
+h2{
+	margin: 60px;
+	font-size: 50px;
+	color: rgb(76, 92, 79);
+    font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+    text-align: left;
+}
+p{
+	margin: 40px;
+	font-size: 60px;
+	color: rgb(255, 255, 255);
+	background-color: rgb(0, 0, 255);
+    font-family: Arial, Helvetica, sans-serif;
+	font-weight: lighter;
+	text-align: left;
+	transform: perspective(2250px) rotateY(25deg);
+		box-shadow: 25px 25px 2px rgb(0, 119, 255);
+		animation: shadowiggle 2s infinite;
+}
+a{
+	color: rgb(255, 255, 255);
+	font-family: "VT323", serif;
+	font-weight: 400;
+    text-decoration: none;
+}
+.container{
+	margin: 60px;
+	flex-wrap: wrap;
+	display: flex;
+	justify-content: center;
+	align-items: start;
+	gap: 30px;
+	flex: 80%
+}
+.footer{
+	flex-wrap: wrap;
+	display: flex;
+	justify-content: center;
+	align-items: end;
+	gap: 15px;
+	flex: 10%;
+	background-color: rgb(0, 0, 255);
+}
+
+.header{
+	width: 100%;
+	flex-wrap: wrap;
+	display: flex;
+	justify-content: center;
+	align-items: top;
+	gap: 15px;
+	flex: 10%;
+	background-color:  rgb(0, 0, 255);
+}
+
+.bar{
+	max-width: auto;
+	flex-wrap: wrap;
+	display: flex;
+	justify-content: left;
+	align-items: top;
+	gap: 15px;
+	flex: 10%;
+	background-color:  rgb(0, 0, 255);
+}
+
+.item1,  .item2,  .item3,  .item4{
+	max-height: 500px;
+	max-width: auto;
+	display: flex;
+	justify-content: center;
+	box-shadow: 10px 10px 2px rgb(0, 119, 255);
+}
+
+nav{
+	margin: 10px;
+	font-size: 50px;
+	text-align: center;
+	color: white;
+}
+
+@keyframes cardflip {
+	0% {
+		transform: perspective(2250px) rotateY(0deg);
+		box-shadow: 10px 10px 2px rgb(0, 119, 255);
+	}
+	100% {
+		transform: perspective(2250px) rotateY(-25deg) scale(1.3);
+		box-shadow: 25px 25px 2px rgb(0, 119, 255);
+	}
+}
+
+@keyframes shadowiggle {
+	0% {
+		box-shadow: 10px 10px 2px rgb(0, 119, 255);
+	}
+	50% {
+		box-shadow: -0.8rem -0.8rem 2px rgb(0, 119, 255);
+	}
+	100% {
+		box-shadow: 15px 10px 2px rgb(0, 119, 255);
+	}
+}
+
+#scroll-text {  
+	
+	 -webkit-text-stroke-width: 3px; background-color: blue; max-width: fit-content;  font-size: 90px; text-align: left;   color: rgb(255, 255, 255);   font-family: "VT323", serif;   font-weight: 400;      text-align: center;   transform: translateX(100%);   animation: my-animation 10s linear infinite;    }    @keyframes my-animation {   from {       transform: translateX(100%);   }   to {     transform: translateX(-100%);   }  }
+
+.item1:hover {
+    animation-name: cardflip;
+    animation-duration: 1s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards; 
+}
+.item2:hover{
+	opacity:0.5;
+}
+
+.item3:hover{
+	opacity:0.5;
+}
+
+.item4:hover{
+	opacity:0.5;
+}
