@@ -115,7 +115,7 @@ nav{
 		box-shadow: 10px 10px 2px rgb(0, 119, 255);
 	}
 	100% {
-		transform: perspective(2250px) rotateY(-25deg) scale(1.3);
+		transform: perspective(2250px) rotateY(-365deg) scale(1.3);
 		box-shadow: 25px 25px 2px rgb(0, 119, 255);
 	}
 }
