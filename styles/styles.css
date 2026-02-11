@@ -58,9 +58,9 @@ a{
 	flex-wrap: wrap;
 	display: flex;
 	justify-content: center;
-	align-items: start;
+	align-items: top;
 	gap: 30px;
-	flex: 80%
+	flex: 80%;
 }
 
 
