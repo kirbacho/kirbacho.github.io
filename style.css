@@ -1,0 +1,141 @@
+body{
+    background-color: #0a0b12;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    padding: 1%;
+    border-bottom: 1px solid #787878;
+    position: fixed;
+    background-color: #0a0b12;
+    top: 0;
+    box-shadow: seagreen 0px 0px 10px;
+    z-index: 1000;
+}
+
+.navbar a{
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 30px;
+    transition: color 0.3s ease;
+}
+
+li a{
+    color: #ffffff;
+}
+
+.navbar a:hover{
+    color: #000000;
+    background-color: #fff;
+}
+
+.nav-left{
+    display: flex;
+
+}
+
+.nav-right{
+    position: absolute;
+    display: flex;
+    justify-content: right;
+    right: 20px;
+    margin-right: 100px;
+}
+
+.navbar p{
+    color: #fff;
+    font-size: 30px;
+    margin: 0 20px;
+}
+
+.box{
+    opacity: 0;
+    background-color: #0a0b12;
+    color: #ffffff;
+    border: 1px solid #787878;
+    padding: 50px;
+    margin: 0 auto;
+    margin-top: 200px;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: seagreen 0px 0px 10px;
+    transform: translateY(100px);
+    transition: opacity 2s ease, transform 1s ease;
+}
+
+.box.show{
+    opacity: 1;
+    background-color: #0a0b12;
+    color: #ffffff;
+    border: 1px solid #787878;
+    padding: 50px;
+    margin: 0 auto;
+    margin-top: 200px;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: seagreen 0px 0px 10px; 
+    transform: translateY(0);
+}
+
+.box h1{
+    font-family: "Inter", serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 100px;
+    margin: 10px 0;
+}
+
+.box p{
+    font-family: "Inter", serif;
+    font-size: 35px;
+    margin: 50px 0;
+}
+
+ul{
+    font-family: "Inter", serif;
+    font-size: 35px;
+    margin: 50px 0;
+}
+
+.container{
+	margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+	flex-wrap: wrap;
+	display: flex;
+    width: 80%;
+	justify-content: center;
+	gap: 30px;
+	flex: 80%;
+}
+
+.inner, .picture{
+    z-index: 9;
+    border-radius: 10px;
+	max-height: 400px;
+	display: flex;
+	justify-content: center;
+	box-shadow: seagreen 0px 0px 10px;
+    border: 1px solid #787878;
+}
+
+.picture, .outer{
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.outer:hover{
+    transform: scale(1.2);
+    z-index: 10;
+    transition: transform 0.3s ease;
+}
+.picture:hover{
+    transform: scale(1.2);
+    z-index: 10;
+    transition: transform 0.3s ease;
+}

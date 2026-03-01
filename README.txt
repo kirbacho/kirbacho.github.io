@@ -1,0 +1,1 @@
+This website serves as a personal website/portfolio. I showcase some projects I worked on as well as my photography. The JavaScript adds the fade in effect when scrolling, and the 3D tilt on the photography cards. 
