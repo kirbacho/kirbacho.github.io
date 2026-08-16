@@ -1,141 +1,1253 @@
-body{
-    background-color: #0a0b12;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+:root {
+    --window: rgb(192, 192, 192);
+    --shadow: rgb(128, 128, 128);
+    --window1: rgb(0, 0, 128);
+    --highlight: rgb(240, 240, 240);
+    --offwhite: rgb(0, 128, 128);
 }
+
+
+/* ==========================================
+   RESET
+   ========================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    background-color: var(--offwhite);
+    margin: 0;
+    padding: 0 0 42px 0;
+
+    font-family: "Geist Pixel", sans-serif;
+
+    cursor: url("data:application/octet-stream;base64,AAACAAEAICAAAAoACgAwAQAAFgAAACgAAAAgAAAAQAAAAAEAAQAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AAAAAAAAAAAAAB/gAAAf4AAAP/AAAD/wAAB/8AAAf/gAAP/4AAC/+AABv/gAA7/4AAM/2AAANtgAADbQAAA2wAAANgAAADAAAAAwAAAAMAAAADAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA///////AD///wA///8AP//+AB///gAf//wAH//8AA//+AAP//gAD//wAA//4AAP/+AAD//iAA///gAf//4AP//+AP///gf///4f///+H////h////4f////P//////////////////////////////////////////////////////////////////8="), auto;
+}
+
+
+/* ==========================================
+   NAVBAR
+   ========================================== */
 
 .navbar {
     display: flex;
+    align-items: center;
+
     width: 100%;
-    padding: 1%;
-    border-bottom: 1px solid #787878;
+    height: 42px;
+
+    padding: 0 12px;
+
     position: fixed;
-    background-color: #0a0b12;
     top: 0;
-    box-shadow: seagreen 0px 0px 10px;
-    z-index: 1000;
+    left: 0;
+
+    background: var(--window1);
+
+    border-top: 2px solid var(--highlight);
+    border-left: 2px solid var(--highlight);
+    border-right: 2px solid rgb(64, 64, 64);
+    border-bottom: 2px solid rgb(64, 64, 64);
+
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.2),
+        inset -1px -1px 0 rgba(0,0,0,0.35);
+
+    z-index: 10000;
 }
 
-.navbar a{
-    color: #fff;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 30px;
-    transition: color 0.3s ease;
-}
-
-li a{
-    color: #ffffff;
-}
-
-.navbar a:hover{
-    color: #000000;
-    background-color: #fff;
-}
-
-.nav-left{
+.nav-left {
     display: flex;
-
 }
 
-.nav-right{
+.nav-right {
     position: absolute;
-    display: flex;
-    justify-content: right;
     right: 20px;
+
+    display: flex;
+    justify-content: flex-end;
+
     margin-right: 100px;
 }
 
-.navbar p{
-    color: #fff;
-    font-size: 30px;
+.navbar p {
+    color: #ffffff;
+
+    font-size: 20px;
+
     margin: 0 20px;
 }
 
-.box{
-    opacity: 0;
-    background-color: #0a0b12;
+.navbar a {
     color: #ffffff;
-    border: 1px solid #787878;
-    padding: 50px;
-    margin: 0 auto;
-    margin-top: 200px;
-    width: 80%;
-    border-radius: 10px;
-    box-shadow: seagreen 0px 0px 10px;
-    transform: translateY(100px);
-    transition: opacity 2s ease, transform 1s ease;
+
+    text-decoration: none;
+
+    margin: 0 15px;
+
+    font-size: 20px;
+
+    transition: color 0.2s ease;
 }
 
-.box.show{
-    opacity: 1;
-    background-color: #0a0b12;
-    color: #ffffff;
-    border: 1px solid #787878;
-    padding: 50px;
-    margin: 0 auto;
-    margin-top: 200px;
-    width: 80%;
-    border-radius: 10px;
-    box-shadow: seagreen 0px 0px 10px; 
-    transform: translateY(0);
+.navbar a:hover {
+    color: var(--shadow);
+
+    text-decoration: underline;
 }
 
-.box h1{
-    font-family: "Inter", serif;
+
+/* ==========================================
+   GENERAL PORTFOLIO CONTAINERS
+   ========================================== */
+
+.container {
+    width: 70%;
+
+    margin: 100px auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+    align-items: start;
+}
+
+.container_left,
+.container_left1 {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--window);
+
+    border-top: 3px solid var(--highlight);
+    border-left: 3px solid var(--highlight);
+    border-right: 3px solid rgb(64,64,64);
+    border-bottom: 3px solid rgb(64,64,64);
+
+    box-shadow:
+        inset 1px 1px 0 var(--window),
+        inset -1px -1px 0 var(--shadow),
+        8px 8px 0 rgba(0,0,0,0.3);
+}
+
+.container_left p,
+.container_left1 p {
+    font-family: "Geist Pixel", sans-serif;
+
+    font-size: 20px;
+    line-height: 1.5;
+
+    text-align: left;
+
+    padding: 20px;
+
+    margin: 0;
+
+    color: #000000;
+}
+
+.container_right {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+
+    justify-items: center;
+}
+
+.container_right1 {
+    width: 100%;
+
+    display: grid;
+
+    justify-items: end;
+}
+
+.container_right.single-item {
+    grid-template-columns: 1fr;
+}
+
+
+/* ==========================================
+   TITLE BARS
+   ========================================== */
+
+.win95-titlebar {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    height: 22px;
+
+    padding: 0 3px;
+
+    background: var(--window1);
+
+    cursor: grab;
+
+    flex-shrink: 0;
+}
+
+.win95-titlebar:active {
+    cursor: grabbing;
+}
+
+.panel-titlebar {
+    cursor: default;
+}
+
+.win95-titlebar-label {
+    color: #ffffff;
+
+    font-family: "Geist Pixel", sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 0.5px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    padding-left: 2px;
+}
+
+.win95-titlebar-buttons {
+    display: flex;
+
+    gap: 2px;
+
+    flex-shrink: 0;
+}
+
+.win95-btn {
+    width: 16px;
+    height: 14px;
+
+    background: var(--window);
+
+    border-top: 1px solid var(--highlight);
+    border-left: 1px solid var(--highlight);
+    border-right: 1px solid rgb(64,64,64);
+    border-bottom: 1px solid rgb(64,64,64);
+
+    font-family: "Geist Pixel", sans-serif;
+
+    font-size: 10px;
     font-weight: bold;
-    text-align: center;
-    font-size: 100px;
-    margin: 10px 0;
+
+    line-height: 1;
+
+    color: #000;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    user-select: none;
 }
 
-.box p{
-    font-family: "Inter", serif;
-    font-size: 35px;
-    margin: 50px 0;
+.win95-btn:active {
+    border-top: 1px solid rgb(64,64,64);
+    border-left: 1px solid rgb(64,64,64);
+    border-right: 1px solid var(--highlight);
+    border-bottom: 1px solid var(--highlight);
 }
 
-ul{
-    font-family: "Inter", serif;
-    font-size: 35px;
-    margin: 50px 0;
+
+/* ==========================================
+   BOX HEADINGS
+   ========================================== */
+
+.box {
+    opacity: 0;
+
+    transform: scale(0.1);
+
+    margin: 0 auto;
+
+    transition:
+        opacity 0.5s ease,
+        transform 1s ease;
 }
 
-.container{
-	margin: 0 auto;
-    margin-top: 100px;
-    margin-bottom: 100px;
-	flex-wrap: wrap;
-	display: flex;
-    width: 80%;
-	justify-content: center;
-	gap: 30px;
-	flex: 80%;
-}
+.box.show {
+    width: 100%;
 
-.inner, .picture{
-    z-index: 9;
-    border-radius: 10px;
-	max-height: 400px;
-	display: flex;
-	justify-content: center;
-	box-shadow: seagreen 0px 0px 10px;
-    border: 1px solid #787878;
-}
+    opacity: 1;
 
-.picture, .outer{
     transform: scale(1);
-    transition: transform 0.3s ease;
+
+    background-color: var(--shadow);
+
+    border-top: 1px solid rgb(64,64,64);
+    border-bottom: 1px solid var(--highlight);
+
+    margin: 0 auto;
 }
 
-.outer:hover{
-    transform: scale(1.2);
-    z-index: 10;
-    transition: transform 0.3s ease;
+.box1 {
+    background-color: var(--shadow);
+
+    border-top: 1px solid rgb(64,64,64);
+    border-bottom: 1px solid var(--highlight);
 }
-.picture:hover{
+
+.box h1,
+.box1 h1 {
+    font-family: "Geist Pixel", sans-serif;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    font-size: 40px;
+
+    margin: 10px 0;
+
+    color: rgb(64,64,64);
+
+    text-shadow:
+        1px 1px 0 var(--highlight);
+}
+
+
+/* ==========================================
+   PORTFOLIO IMAGES
+   ========================================== */
+
+.inner,
+.picture {
+    z-index: 9;
+
+    max-height: 250px;
+    max-width: 100%;
+
+    display: block;
+}
+
+.outer,
+.picture {
+    max-width: fit-content;
+
+    transform: scale(1);
+
+    transition:
+        transform 0.3s ease;
+}
+
+.outer:hover,
+.picture:hover {
     transform: scale(1.2);
-    z-index: 10;
-    transition: transform 0.3s ease;
+
+    z-index: 100;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+/* ==========================================
+   PHOTO VIEWER
+   ========================================== */
+
+.photo-viewer {
+    width: 100%;
+
+    max-width: 340px;
+
+    background: var(--window);
+
+    padding: 3px;
+
+    border-top: 2px solid var(--highlight);
+    border-left: 2px solid var(--highlight);
+    border-right: 2px solid rgb(64,64,64);
+    border-bottom: 2px solid rgb(64,64,64);
+
+    box-shadow:
+        inset 1px 1px 0 var(--window),
+        inset -1px -1px 0 var(--shadow),
+        6px 6px 0 rgba(0,0,0,0.3);
+}
+
+.photo-viewer .win95-titlebar {
+    cursor: default;
+}
+
+.photo-viewer-body {
+    margin-top: 3px;
+
+    background: #000;
+
+    border-top: 1px solid rgb(64,64,64);
+    border-left: 1px solid rgb(64,64,64);
+    border-right: 1px solid var(--highlight);
+    border-bottom: 1px solid var(--highlight);
+
+    padding: 4px;
+}
+
+.photo-viewer-body img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+
+/* ==========================================
+   RESEARCH SECTION
+   ========================================== */
+
+.research-section {
+    width: 80%;
+
+    margin: 160px auto 180px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.research-window {
+    width: 100%;
+
+    background: var(--window);
+
+    border-top: 3px solid var(--highlight);
+    border-left: 3px solid var(--highlight);
+    border-right: 3px solid rgb(64,64,64);
+    border-bottom: 3px solid rgb(64,64,64);
+
+    box-shadow:
+        inset 1px 1px 0 var(--window),
+        inset -1px -1px 0 var(--shadow),
+        10px 10px 0 rgba(0,0,0,0.25);
+}
+
+.research-body {
+    padding: 25px 30px 30px;
+}
+
+.research-heading {
+    background: var(--shadow);
+
+    border-top: 2px solid rgb(64,64,64);
+    border-bottom: 2px solid var(--highlight);
+
+    margin-bottom: 25px;
+}
+
+.research-heading h1 {
+    font-family: "Geist Pixel", sans-serif;
+
+    text-align: center;
+
+    font-size: clamp(28px, 4vw, 48px);
+
+    color: rgb(64,64,64);
+
+    text-shadow:
+        1px 1px 0 var(--highlight);
+
+    margin: 15px;
+}
+
+.research-intro {
+    max-width: 1000px;
+
+    margin: 0 auto 35px;
+
+    font-family: "Geist Pixel", sans-serif;
+
+    font-size: 20px;
+
+    line-height: 1.65;
+
+    color: #000;
+}
+
+.research-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+.research-card {
+    background: rgb(176,176,176);
+
+    border-top: 2px solid rgb(64,64,64);
+    border-left: 2px solid rgb(64,64,64);
+
+    border-right: 2px solid var(--highlight);
+    border-bottom: 2px solid var(--highlight);
+
+    box-shadow:
+        3px 3px 0 rgba(0,0,0,0.15);
+}
+
+.research-card-titlebar {
+    height: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 8px;
+
+    background: var(--window1);
+
+    color: #fff;
+
+    font-family: "Geist Pixel", sans-serif;
+
+    font-size: 12px;
+}
+
+.research-card-body {
+    padding: 18px;
+}
+
+.research-card-body h2 {
+    margin: 0 0 10px;
+
+    font-family: "Geist Pixel", sans-serif;
+
+    font-size: 25px;
+
+    color: rgb(0,0,128);
+}
+
+.research-card-body p {
+    margin: 0 0 18px;
+
+    font-family: "Geist Pixel", sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.55;
+
+    color: #000;
+}
+
+.research-tag {
+    display: inline-block;
+
+    padding: 4px 7px;
+
+    background: var(--window);
+
+    border-top: 1px solid rgb(64,64,64);
+    border-left: 1px solid rgb(64,64,64);
+    border-right: 1px solid var(--highlight);
+    border-bottom: 1px solid var(--highlight);
+
+    font-family: "Geist Pixel", sans-serif;
+
+    font-size: 11px;
+
+    color: #000;
+}
+
+.research-footer {
+    margin-top: 25px;
+
+    padding: 12px;
+
+    background: var(--window1);
+
+    color: #ffffff;
+
+    font-family: "Geist Pixel", sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+.research-footer strong {
+    margin-left: 10px;
+}
+
+
+/* ==========================================
+   GAME SECTION
+   ========================================== */
+
+.game-section {
+    position: relative;
+
+    width: 80%;
+
+    min-height: 620px;
+
+    margin: 120px auto 180px;
+}
+
+.game-description {
+    width: 42%;
+
+    background: var(--window);
+
+    border-top: 3px solid var(--highlight);
+    border-left: 3px solid var(--highlight);
+    border-right: 3px solid rgb(64,64,64);
+    border-bottom: 3px solid rgb(64,64,64);
+
+    box-shadow:
+        inset 1px 1px 0 var(--window),
+        inset -1px -1px 0 var(--shadow),
+        8px 8px 0 rgba(0,0,0,0.3);
+}
+
+.game-description p {
+    font-family: "Geist Pixel", sans-serif;
+
+    font-size: 18px;
+
+    line-height: 1.55;
+
+    color: #000;
+
+    padding: 0 20px;
+}
+
+.game-description .game-instructions {
+    font-size: 14px;
+
+    color: rgb(64,64,64);
+}
+
+
+/* ------------------------------------------
+   ACTUAL MOVABLE GAME WINDOW
+   ------------------------------------------ */
+
+.game-window {
+    position: absolute;
+
+    width: 680px;
+
+    padding: 3px;
+
+    background: var(--window);
+
+    border-top: 2px solid var(--highlight);
+    border-left: 2px solid var(--highlight);
+    border-right: 2px solid rgb(64,64,64);
+    border-bottom: 2px solid rgb(64,64,64);
+
+    box-shadow:
+        inset 1px 1px 0 var(--window),
+        inset -1px -1px 0 var(--shadow),
+        8px 8px 14px rgba(0,0,0,0.45);
+
+    z-index: 100;
+}
+
+.game-titlebar {
+    cursor: grab;
+}
+
+.game-window.dragging {
+    box-shadow:
+        inset 1px 1px 0 var(--window),
+        inset -1px -1px 0 var(--shadow),
+        12px 14px 20px rgba(0,0,0,0.55);
+}
+
+.game-window-content {
+    margin-top: 3px;
+
+    background: #000;
+
+    padding: 6px;
+
+    border-top: 1px solid rgb(64,64,64);
+    border-left: 1px solid rgb(64,64,64);
+    border-right: 1px solid var(--highlight);
+    border-bottom: 1px solid var(--highlight);
+
+    overflow: hidden;
+}
+
+.game-window iframe {
+    display: block;
+
+    width: 640px;
+    height: 380px;
+
+    border: 0;
+
+    margin: 0;
+
+    max-width: none;
+}
+
+
+/* ==========================================
+   GENERIC WIN95 WINDOWS
+   ========================================== */
+
+.win95-window {
+    position: absolute;
+
+    width: 300px;
+
+    background: var(--window);
+
+    padding: 3px;
+
+    border-top: 2px solid var(--highlight);
+    border-left: 2px solid var(--highlight);
+    border-right: 2px solid rgb(64,64,64);
+    border-bottom: 2px solid rgb(64,64,64);
+
+    box-shadow:
+        inset 1px 1px 0 var(--window),
+        inset -1px -1px 0 var(--shadow),
+        4px 4px 8px rgba(0,0,0,0.45);
+
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.win95-window.dragging {
+    box-shadow:
+        inset 1px 1px 0 var(--window),
+        inset -1px -1px 0 var(--shadow),
+        8px 12px 18px rgba(0,0,0,0.55);
+}
+
+.win95-window.minimized .win95-content,
+.win95-window.minimized .win95-statusbar,
+.win95-window.minimized .game-window-content {
+    display: none;
+}
+
+.win95-window.closed {
+    display: none;
+}
+
+.win95-window * {
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+.win95-content {
+    margin-top: 3px;
+
+    background: #000;
+
+    border-top: 1px solid rgb(64,64,64);
+    border-left: 1px solid rgb(64,64,64);
+    border-right: 1px solid var(--highlight);
+    border-bottom: 1px solid var(--highlight);
+
+    padding: 6px;
+}
+
+.win95-content img {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    cursor: pointer;
+}
+
+.win95-statusbar {
+    margin-top: 3px;
+
+    height: 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 4px;
+
+    border-top: 1px solid rgb(64,64,64);
+    border-left: 1px solid rgb(64,64,64);
+    border-right: 1px solid var(--highlight);
+    border-bottom: 1px solid var(--highlight);
+
+    background: var(--window);
+
+    font-family: "Geist Pixel", sans-serif;
+
+    font-size: 10px;
+
+    color: #000;
+}
+
+
+/* ==========================================
+   PERUCICA DESKTOP
+   ========================================== */
+
+.win95-desktop-scroll {
+    width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding-bottom: 100px;
+}
+
+.win95-desktop {
+    position: relative;
+
+    width: 1100px;
+
+    min-width: 1100px;
+
+    min-height: 1000px;
+
+    margin-top: 110px;
+
+    padding-bottom: 100px;
+}
+
+.win95-hint {
+    position: absolute;
+
+    top: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 320px;
+
+    z-index: 500;
+}
+
+.win95-hint .win95-titlebar {
+    cursor: default;
+}
+
+.win95-hint-body {
+    margin-top: 3px;
+
+    background: var(--window);
+
+    border-top: 1px solid rgb(64,64,64);
+    border-left: 1px solid rgb(64,64,64);
+    border-right: 1px solid var(--highlight);
+    border-bottom: 1px solid var(--highlight);
+}
+
+.win95-hint p {
+    margin: 0;
+
+    padding: 14px;
+
+    font-family: "Geist Pixel", sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.4;
+
+    color: #000;
+
+    text-align: center;
+}
+
+
+/* ==========================================
+   TASKBAR
+   ========================================== */
+
+.taskbar {
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 36px;
+
+    background: var(--window);
+
+    border-top: 2px solid var(--highlight);
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 5px;
+
+    gap: 6px;
+
+    z-index: 10000;
+}
+
+.start-btn {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    height: 26px;
+
+    padding: 0 10px;
+
+    background: var(--window);
+
+    border-top: 2px solid var(--highlight);
+    border-left: 2px solid var(--highlight);
+    border-right: 2px solid rgb(64,64,64);
+    border-bottom: 2px solid rgb(64,64,64);
+
+    font-family: "Geist Pixel", sans-serif;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    color: #000;
+
+    cursor: pointer;
+
+    user-select: none;
+}
+
+.start-btn:active,
+.start-btn.active {
+    border-top: 2px solid rgb(64,64,64);
+    border-left: 2px solid rgb(64,64,64);
+    border-right: 2px solid var(--highlight);
+    border-bottom: 2px solid var(--highlight);
+}
+
+.taskbar-divider {
+    width: 2px;
+
+    height: 24px;
+
+    border-left: 1px solid rgb(64,64,64);
+    border-right: 1px solid var(--highlight);
+}
+
+.taskbar-clock {
+    margin-left: auto;
+
+    height: 26px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 12px;
+
+    border-top: 2px solid rgb(64,64,64);
+    border-left: 2px solid rgb(64,64,64);
+    border-right: 2px solid var(--highlight);
+    border-bottom: 2px solid var(--highlight);
+
+    font-family: "Geist Pixel", sans-serif;
+
+    font-size: 13px;
+
+    color: #000;
+
+    white-space: nowrap;
+}
+
+
+/* ==========================================
+   START MENU
+   ========================================== */
+
+.start-menu {
+    position: fixed;
+
+    bottom: 38px;
+    left: 4px;
+
+    width: 230px;
+
+    background: var(--window);
+
+    border-top: 2px solid var(--highlight);
+    border-left: 2px solid var(--highlight);
+    border-right: 2px solid rgb(64,64,64);
+    border-bottom: 2px solid rgb(64,64,64);
+
+    box-shadow:
+        4px 4px 0 rgba(0,0,0,0.35);
+
+    z-index: 10001;
+
+    display: none;
+
+    flex-direction: row;
+}
+
+.start-menu.open {
+    display: flex;
+}
+
+.start-menu-side {
+    width: 26px;
+
+    background: var(--window1);
+
+    color: #ffffff;
+
+    font-family: "Geist Pixel", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    writing-mode: vertical-rl;
+
+    transform: rotate(180deg);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px 0;
+}
+
+.start-menu-items {
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 4px;
+}
+
+.start-menu-item {
+    display: block;
+
+    padding: 7px 10px;
+
+    font-family: "Geist Pixel", sans-serif;
+
+    font-size: 14px;
+
+    color: #000;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+.start-menu-item:hover {
+    background: var(--window1);
+
+    color: #ffffff;
+}
+
+.start-menu-divider {
+    height: 0;
+
+    border-top: 1px solid rgb(64,64,64);
+    border-bottom: 1px solid var(--highlight);
+
+    margin: 4px 6px;
+}
+
+
+/* ==========================================
+   CRT EFFECT
+   ========================================== */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 9998;
+
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.06) 0px,
+        rgba(0,0,0,0.06) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+
+    opacity: 0.35;
+}
+
+
+/* ==========================================
+   SHUTDOWN SCREEN
+   ========================================== */
+
+.shutting-down {
+    overflow: hidden;
+}
+
+.shutting-down::after {
+    content: "It's now safe to close this tab.";
+
+    position: fixed;
+
+    inset: 0;
+
+    background: #000;
+
+    color: #ffffff;
+
+    font-family: "Geist Pixel", sans-serif;
+
+    font-size: 22px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 20px;
+
+    z-index: 99999;
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        position: relative;
+    }
+
+    .nav-right {
+        position: static;
+
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .navbar a {
+        font-size: 15px;
+
+        margin: 0 5px;
+    }
+
+    .navbar p {
+        font-size: 16px;
+
+        margin: 0 5px;
+    }
+
+
+    .container {
+        width: 92%;
+
+        grid-template-columns: 1fr;
+
+        margin-top: 70px;
+        margin-bottom: 80px;
+    }
+
+
+    .container_right {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .research-section {
+        width: 92%;
+
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    .research-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .game-section {
+        width: 92%;
+
+        min-height: auto;
+
+        margin-top: 100px;
+        margin-bottom: 120px;
+    }
+
+    .game-description {
+        width: 100%;
+    }
+
+    .game-window {
+        position: relative !important;
+
+        left: auto !important;
+        top: auto !important;
+
+        width: 100%;
+
+        margin-top: 35px;
+
+        overflow-x: auto;
+    }
+
+    .game-window-content {
+        overflow-x: auto;
+    }
+
+    .game-window iframe {
+        width: 640px;
+        height: 380px;
+    }
+
+
+    .win95-desktop-scroll {
+        overflow-x: auto;
+    }
+
+    .win95-desktop {
+        width: 1100px;
+    }
+
+    .research-footer strong {
+        display: block;
+
+        margin-left: 0;
+
+        margin-top: 5px;
+    }
 }
